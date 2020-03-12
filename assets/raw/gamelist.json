@@ -1,0 +1,249 @@
+{
+	"games":[
+		{
+			"code":"1",
+			"quizzes":[
+				{
+					"code":"1",
+					"description":"Setelah dibangkitkan dari dalam kubur, manusia berbondong-bondong menuju suatu tempat untuk mempertanggungjawabkan perbuatannya. Tempat yang dimaksud adalah ...",
+					"options":[
+						{
+							"code":"1",
+							"description":"Siratalmustakim"
+						},
+						{
+							"code":"2",
+							"description":"Surga"
+						},
+						{
+							"code":"3",
+							"description":"Neraka"
+						},
+						{
+							"code":"4",
+							"description":"Padang mahsyar"
+						}
+					],
+					"quiz_true":"Padang mahsyar",
+					"quiz_answer":"Padang mahsyar"
+				},
+				{
+					"code":"2",
+					"description":"Alam siksa kubur disebut juga . . . ",
+					"options":[
+						{
+							"code":"1",
+							"description":"Alam barzakh"
+						},
+						{
+							"code":"2",
+							"description":"Yaumul tanad"
+						},
+						{
+							"code":"3",
+							"description":" Yaumul hisab"
+						},
+						{
+							"code":"4",
+							"description":"Alam semesta"
+						}
+					],
+					"quiz_true":"Alam barzakh",
+					"quiz_answer":"Alam barzakh"
+				},
+				{
+					"code":"3",
+					"description":"Malaikat Allah SWT yang bertugas mencatat amal kebaikan yang dikerjalan manusia adalah . . . ",
+					"options":[
+						{
+							"code":"1",
+							"description":"Munkar"
+						},
+						{
+							"code":"2",
+							"description":"Nakir"
+						},
+						{
+							"code":"3",
+							"description":"Rakib"
+						},
+						{
+							"code":"4",
+							"description":"Atid"
+						}
+					],
+					"quiz_true":"Rakib",
+					"quiz_answer":"Rakib"
+				},
+				{
+					"code":"4",
+					"description":"Dibangkitkannya nyawa manusia dari alam kubur ditandai dengan . . . ",
+					"options":[
+						{
+							"code":"1",
+							"description":"Ditiupnya sangkakala oleh Malaikat Izrail"
+						},
+						{
+							"code":"2",
+							"description":"Ditiupnya sangkakala oleh Malaikat Israfil"
+						},
+						{
+							"code":"3",
+							"description":"Suara burung hud-hud"
+						},
+						{
+							"code":"4",
+							"description":"Bangkitnya Rasulullah saw"
+						}
+					],
+					"quiz_true":"Ditiupnya sangkakala oleh Malaikat Israfil",
+					"quiz_answer":"Ditiupnya sangkakala oleh Malaikat Israfil"
+				},
+				{
+					"code":"5",
+					"description":"Pernyataan yang merupakan perilaku orang yang beriman kepada hari akhir adalah …",
+					"options":[
+						{
+							"code":"1",
+							"description":"Tidak merasa iri atas nikmat orang lain"
+						},
+						{
+							"code":"2",
+							"description":"Dunia dan seluruh isinya merupakan tujuan akhir"
+						},
+						{
+							"code":"3",
+							"description":"Tergiur oleh gemerlapnya dunia"
+						},
+						{
+							"code":"4",
+							"description":"Cinta dunia harta secara berlebihan"
+						}
+					],
+					"quiz_true":"Tidak merasa iri atas nikmat orang lain",
+					"quiz_answer":"Tidak merasa iri atas nikmat orang lain"
+				},
+				{
+					"code":"6",
+					"description":"Seseorang akan berusaha menjadi lebih baik hari demi hari. Tidak ada hari yang dilalui tanpa perbuatan baik. Pernyataan tersebut merupakan salah satu perilaku orang yang . . . ",
+					"options":[
+						{
+							"code":"1",
+							"description":"Takabur"
+						},
+						{
+							"code":"2",
+							"description":"Ujub"
+						},
+						{
+							"code":"3",
+							"description":"Beriman kepada hari akhir"
+						},
+						{
+							"code":"4",
+							"description":"Memiliki ketakwaan sekelas dengan rasul"
+						}
+					],
+					"quiz_true":"Beriman kepada hari akhir",
+					"quiz_answer":"Beriman kepada hari akhir"
+				},
+				{
+					"code":"7",
+					"description":"Contoh kiamat kubra ditunjukkan oleh pernyataan . . . ",
+					"options":[
+						{
+							"code":"1",
+							"description":"Hancurnya seluruh alam dan seisinya"
+						},
+						{
+							"code":"2",
+							"description":"Terjadinya bencana alam di wilayah tertentu"
+						},
+						{
+							"code":"3",
+							"description":" Adanya banjir bandang yang menghancurkan ratusan rumah"
+						},
+						{
+							"code":"4",
+							"description":"Kematian seseorang"
+						}
+					],
+					"quiz_true":"Hancurnya seluruh alam dan seisinya",
+					"quiz_answer":"Hancurnya seluruh alam dan seisinya"
+				},
+				{
+					"code":"8",
+					"description":"Berikut tanda-tanda kiamat kecil, kecuali . . . ",
+					"options":[
+						{
+							"code":"1",
+							"description":"Tersebarnya perzinaan"
+						},
+						{
+							"code":"2",
+							"description":"Minuman keras merajalela"
+						},
+						{
+							"code":"3",
+							"description":"Fitnah muncul dimana-mana"
+						},
+						{
+							"code":"4",
+							"description":"Munculnya bangsa Yakjuj Makjuj"
+						}
+					],
+					"quiz_true":"Munculnya bangsa Yakjuj Makjuj",
+					"quiz_answer":"Munculnya bangsa Yakjuj Makjuj"
+				},
+				{
+					"code":"9",
+					"description":"Iman terhadap hari kiamat merupakan rukun Iman ke . . . ",
+					"options":[
+						{
+							"code":"1",
+							"description":"5 (lima)"
+						},
+						{
+							"code":"2",
+							"description":"4 (empat)"
+						},
+						{
+							"code":"3",
+							"description":"6 (enam)"
+						},
+						{
+							"code":"4",
+							"description":"2 (dua)"
+						}
+					],
+					"quiz_true":"5 (lima)",
+					"quiz_answer":"5 (lima)"
+				},
+				{
+					"code":"10",
+					"description":"Alam semesta ini akan…",
+					"options":[
+						{
+							"code":"1",
+							"description":"Kekal"
+						},
+						{
+							"code":"2",
+							"description":"Hancur"
+						},
+						{
+							"code":"3",
+							"description":"Tidak tentu"
+						},
+						{
+							"code":"4",
+							"description":"Berubah-ubah"
+						}
+					],
+					"quiz_true":"Hancur",
+					"quiz_answer":"Hancur"
+        }
+      ]
+    }
+  ]
+}

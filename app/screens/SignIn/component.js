@@ -36,7 +36,7 @@ export default class Component extends React.Component {
     const { name, email, password } = this.state;
     const accountData = { name, email, password };
     try {
-      const res = await axios.post('http://ec2-3-89-74-85.compute-1.amazonaws.com/api/login', accountData);
+      const res = await axios.post('http://3.92.245.121:8080/api/users/login', accountData);
       console.log(res.data);
       this.props.navigation.navigate('Home');
       await storage.set(STORAGE_KEY.TOKEN_LOGIN, res.data);

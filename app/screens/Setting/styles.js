@@ -3,7 +3,6 @@ import {
   COLOR_WHITE,
   COLOR_BASE_PRIMARY_MAIN,
   FONT_HEADLINE6_PRIMARY,
-  COLOR_GREY,
   COLOR_BASE_PRIMARY_LIGHT
 } from '../../styles';
 import { scale } from '../../utils/scaling';
@@ -35,19 +34,20 @@ const styles = StyleSheet.create({
   },
   container3: {
     marginTop: METRICS.doubleBaseMargin,
-    flexDirection: 'column',
-    alignContent: 'center',
-    height: scale(200),
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: scale(30),
     width: scale(300),
-    backgroundColor: COLOR_GREY,
-    borderRadius: scale(25)
+    borderRadius: scale(25),
+    backgroundColor: COLOR_BASE_PRIMARY_MAIN,
+    borderColor: COLOR_BASE_PRIMARY_MAIN
   },
   btnContainer: {
     width: scale(100),
     height: scale(30),
     borderBottomLeftRadius: scale(10),
     borderTopLeftRadius: scale(10),
-    backgroundColor: COLOR_BASE_PRIMARY_MAIN,
+    backgroundColor: COLOR_BASE_PRIMARY_LIGHT,
     alignItems: 'center',
     justifyContent: 'center'
   },
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     height: scale(30),
     borderBottomRightRadius: scale(10),
     borderTopRightRadius: scale(10),
-    backgroundColor: COLOR_BASE_PRIMARY_LIGHT,
+    backgroundColor: COLOR_BASE_PRIMARY_MAIN,
     alignItems: 'center',
     justifyContent: 'center'
   },
@@ -82,10 +82,8 @@ const styles = StyleSheet.create({
   },
   text2: {
     ...FONT_HEADLINE6_PRIMARY,
-    color: COLOR_BASE_PRIMARY_MAIN,
-    fontSize: scale(30),
-    marginTop: scale(5),
-    fontWeight: 'bold'
+    color: COLOR_BASE_PRIMARY_LIGHT,
+    fontSize: scale(15)
   },
   text3: {
     marginLeft: METRICS.doubleBaseMargin,

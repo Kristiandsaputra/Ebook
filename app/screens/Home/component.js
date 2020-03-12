@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, ScrollView, Image, TouchableOpacity } from 'react-native';
 import MainScreen from '../../components/layouts/MainScreen';
+import Header from '../../components/elements/Header';
 import { IMAGES, ENDPOINT } from '../../configs';
 import styles from './styles';
 import I18n from '../../i18n';
@@ -45,16 +46,24 @@ export default class Component extends React.Component {
     const { navigation } = this.props;
     navigation.navigate('ListQuiz');
   };
+  _set = () => {
+    const { navigation } = this.props;
+    navigation.navigate('Setting');
+  };
   render() {
     return (
       <MainScreen style={styles.container} isLoading={this.state.isLoading}>
+        <Header title="Home" />
         <ScrollView>
           <View style={styles.row}>
             <TouchableOpacity style={styles.btnContainer}>
-              <Text style={styles.text4}>Teori</Text>
+              <Text style={styles.text4}>Materi</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.btnContainer2} onPress={this._list}>
               <Text style={styles.text4}>Quiz</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.btnContainer3} onPress={this._set}>
+              <Text style={styles.text4}>Setting</Text>
             </TouchableOpacity>
           </View>
           <View style={styles.column}>

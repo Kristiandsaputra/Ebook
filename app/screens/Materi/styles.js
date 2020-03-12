@@ -7,32 +7,21 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignContent: 'center',
+    alignItems: 'center',
     backgroundColor: COLOR_WHITE
   },
   imgContainer: {
-    width: scale(325),
-    height: scale(200),
-    borderRadius: scale(25)
-  },
-  column: {
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: METRICS.doubleBaseMargin,
-    marginBottom: METRICS.doubleBaseMargin
-  },
-  VidContainer: {
-    flex: 1,
-    marginTop: METRICS.doubleBaseMargin
+    width: scale(375),
+    height: scale(245)
   },
   textContainer: {
-    alignItems: 'center',
+    backgroundColor: COLOR_WHITE,
     width: scale(375),
-    height: scale(300)
+    height: scale(700),
+    borderBottomRightRadius: scale(15),
+    borderTopLeftRadius: scale(15)
   },
   textContainerLong: {
-    alignItems: 'center',
     width: scale(375),
     height: scale(600)
   },
@@ -41,10 +30,12 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginTop: METRICS.doubleBaseMargin,
     marginBottom: METRICS.doubleBaseMargin,
+    marginLeft: METRICS.baseMargin,
     color: COLOR_BLACK
   },
   content: {
     fontSize: scale(14),
+    marginLeft: METRICS.baseMargin,
     color: COLOR_BLACK
   },
   margin1: {

@@ -21,6 +21,10 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: scale(15),
     borderTopLeftRadius: scale(15)
   },
+  textContainerLong: {
+    width: scale(375),
+    height: scale(600)
+  },
   title: {
     fontSize: scale(20),
     fontWeight: 'bold',

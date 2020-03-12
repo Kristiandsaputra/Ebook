@@ -1,65 +1,82 @@
 /* eslint-disable react-native/no-color-literals */
 import { StyleSheet } from 'react-native';
-import { COLOR_WHITE, COLOR_BLACK, COLOR_BASE_PRIMARY_MAIN } from '../../styles';
+import { COLOR_WHITE, COLOR_BASE_PRIMARY_MAIN } from '../../styles';
 import { scale } from '../../utils/scaling';
+import METRICS from '../../constants/metrics';
 
 const styles = StyleSheet.create({
-  gridCol: {
-    flexDirection: 'row',
-    height: 150,
-    padding: 20,
-    margin: 20,
-    borderRadius: 10,
-    borderWidth: 0.5,
-    borderColor: COLOR_BASE_PRIMARY_MAIN,
-    width: '90%'
-  },
-  gridText: {
-    color: COLOR_BASE_PRIMARY_MAIN
-  },
-
-  gridTextvalue: {
-    // textAlign: 'right',
-    color: COLOR_BLACK,
-    width: '95%'
-  },
-
-  gridColAnswer: {
-    // flexDirection: 'row',
-    height: 220,
-    padding: 20,
-    margin: 20
-  },
-  buttonStyle: {
-    justifyContent: 'center',
-    borderBottomWidth: 0,
-    marginBottom: 10,
-    marginTop: 10,
-    width: scale(70),
-    marginLeft: '10%',
-    backgroundColor: COLOR_BASE_PRIMARY_MAIN
-  },
-  buttonStyleExit: {
-    justifyContent: 'center',
-    borderBottomWidth: 0,
-    marginBottom: 10,
-    marginTop: 10,
-    width: '40%',
-
-    backgroundColor: COLOR_BASE_PRIMARY_MAIN,
-    margin: 20
-  },
-
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: COLOR_WHITE
+    backgroundColor: COLOR_WHITE,
+    alignContent: 'center'
   },
-  text: {
-    color: COLOR_BLACK,
-    fontSize: 24,
-    paddingTop: '40%'
+  header: {
+    alignItems: 'center',
+    backgroundColor: COLOR_BASE_PRIMARY_MAIN
+  },
+  title: {
+    fontWeight: 'bold',
+    color: COLOR_WHITE
+  },
+  number: {
+    fontFamily: 'Nunito',
+    fontWeight: 'bold',
+    fontSize: scale(20),
+    alignSelf: 'center',
+    marginTop: METRICS.doubleBaseMargin
+  },
+  question: {
+    fontFamily: 'Nunito',
+    fontWeight: 'bold',
+    fontSize: scale(15),
+    width: scale(310),
+    alignSelf: 'baseline',
+    marginTop: METRICS.doubleBaseMargin,
+    marginLeft: scale(30)
+  },
+  option: {
+    width: scale(300),
+    height: scale(60),
+    borderColor: COLOR_BASE_PRIMARY_MAIN,
+    borderWidth: scale(1),
+    borderRadius: scale(5),
+    marginLeft: scale(25),
+    marginTop: METRICS.doubleBaseMargin
+  },
+  optionTxt: {
+    fontFamily: 'Nunito',
+    fontWeight: 'bold',
+    color: COLOR_BASE_PRIMARY_MAIN,
+    fontSize: scale(18),
+    marginLeft: METRICS.doubleBaseMargin,
+    marginTop: scale(16)
+  },
+  optionSelect: {
+    width: scale(300),
+    height: scale(60),
+    borderColor: COLOR_BASE_PRIMARY_MAIN,
+    backgroundColor: COLOR_BASE_PRIMARY_MAIN,
+    borderWidth: scale(1),
+    borderRadius: scale(5),
+    marginLeft: scale(25),
+    marginTop: METRICS.doubleBaseMargin
+  },
+  optionTxtSelect: {
+    fontFamily: 'Nunito',
+    fontWeight: 'bold',
+    color: COLOR_WHITE,
+    fontSize: scale(18),
+    marginLeft: METRICS.doubleBaseMargin,
+    marginTop: scale(16)
+  },
+  button: {
+    marginTop: scale(30),
+    marginHorizontal: 12,
+    marginLeft: scale(30),
+    backgroundColor: COLOR_BASE_PRIMARY_MAIN,
+    width: scale(300),
+    height: scale(40),
+    borderRadius: 5
   }
 });
 

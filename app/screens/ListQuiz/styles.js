@@ -43,20 +43,29 @@ const styles = StyleSheet.create({
     borderRadius: scale(25)
   },
   btnContainer: {
-    width: scale(120),
+    width: scale(100),
     height: scale(30),
     borderBottomLeftRadius: scale(10),
     borderTopLeftRadius: scale(10),
     backgroundColor: COLOR_BASE_PRIMARY_LIGHT,
-    alignItems: 'center'
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   btnContainer2: {
-    width: scale(120),
+    width: scale(100),
+    height: scale(30),
+    backgroundColor: COLOR_BASE_PRIMARY_MAIN,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  btnContainer3: {
+    width: scale(100),
     height: scale(30),
     borderBottomRightRadius: scale(10),
     borderTopRightRadius: scale(10),
-    backgroundColor: COLOR_BASE_PRIMARY_MAIN,
-    alignItems: 'center'
+    backgroundColor: COLOR_BASE_PRIMARY_LIGHT,
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   imgContainer: {
     width: scale(300),
@@ -88,7 +97,7 @@ const styles = StyleSheet.create({
   text4: {
     ...FONT_HEADLINE6_PRIMARY,
     color: COLOR_WHITE,
-    fontSize: scale(20)
+    fontSize: scale(15)
   }
 });
 

@@ -1,249 +1,168 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable no-console */
-/* eslint-disable array-callback-return */
-/* eslint-disable no-param-reassign */
+/* eslint-disable no-undef */
 /* eslint-disable react-native/no-raw-text */
-/* eslint-disable react/sort-comp */
-/* eslint-disable react/jsx-no-bind */
+/* eslint-disable prefer-const */
+/* eslint-disable react/no-did-mount-set-state */
+/* eslint-disable no-plusplus */
+/* eslint-disable react-native/no-color-literals */
 import React, { Component } from 'react';
-import { View, BackHandler, TouchableOpacity, Button } from 'react-native';
-import { Text, Container, Header, Left, Body, Right, Title, Content, CheckBox } from 'native-base';
-// import Icon from 'react-native-vector-icons/Ionicons';
+import { StackActions } from 'react-navigation';
+import { View, TouchableOpacity, ScrollView } from 'react-native';
+import { Container, Header, Title, Content, Button, Right, Body, Text } from 'native-base';
+import CountDown from 'react-native-countdown-component';
 import styles from './styles';
-import SvgBack from '../../../assets/svgs/Back';
-// eslint-disable-next-line import/named
-import { COLOR_BASE_PRIMARY_MAIN } from '../../styles';
+import Quizdata from '../../../assets/raw/gamelist.json';
 
-export default class QuestionAnswer extends Component {
+export default class Quizscreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      questionAnswer: [
-        {
-          question:
-            'Setelah dibangkitkan dari dalam kubur, manusia berbondong-bondong menuju suatu tempat untuk mempertanggungjawabkan perbuatannya. Tempat yang dimaksud adalah . . . ',
-          answers: [
-            {
-              ans: ' Siratalmustakim',
-              correct: false,
-              isSelected: false
-            },
-            {
-              ans: 'Surga',
-              correct: false,
-              isSelected: false
-            },
-            {
-              ans: 'Neraka',
-              correct: false,
-              isSelected: false
-            },
-            {
-              ans: 'Padang mahsyar',
-              correct: true,
-              isSelected: false
-            }
-          ]
-        },
-        {
-          question: 'Alam siksa/kubur disebut juga . . .',
-          answers: [
-            {
-              ans: ' Alam barzakh ',
-              correct: true,
-              isSelected: false
-            },
-            {
-              ans: 'Yaumul tanad',
-              correct: false,
-              isSelected: false
-            },
-            {
-              ans: 'Yaumul hisab',
-              correct: false,
-              isSelected: false
-            },
-            {
-              ans: ' Alam semesta',
-              correct: false,
-              isSelected: false
-            }
-          ]
-        },
-        {
-          question:
-            'Malaikat Allah SWT yang bertugas mencatat amal kebaikan yang dikerjalan manusia adalah . . .',
-          answers: [
-            {
-              ans: ' Munkar ',
-              correct: false,
-              isSelected: false
-            },
-            {
-              ans: ' Nakir',
-              correct: false,
-              isSelected: false
-            },
-            {
-              ans: 'Rakib',
-              correct: true,
-              isSelected: false
-            },
-            {
-              ans: 'Atid',
-              correct: false,
-              isSelected: false
-            }
-          ]
-        },
-        {
-          question: 'Dibangkitkannya nyawa manusia dari alam kubur ditandai dengan . . .',
-          answers: [
-            {
-              ans: 'Ditiupnya sangkakala oleh Malaikat Izrail',
-              correct: false,
-              isSelected: false
-            },
-            {
-              ans: 'Ditiupnya sangkakala oleh Malaikat Israfil ',
-              correct: true,
-              isSelected: false
-            },
-            {
-              ans: 'Suara burung hud-hud',
-              correct: false,
-              isSelected: false
-            },
-            {
-              ans: 'Bangkitnya Rasulullah saw',
-              correct: false,
-              isSelected: false
-            }
-          ]
-        },
-        {
-          question: 'Pernyataan yang merupakan perilaku orang yang beriman kepada hari akhir adalah …',
-          answers: [
-            {
-              ans: 'Tidak merasa iri atas nikmat orang lain',
-              correct: true,
-              isSelected: false
-            },
-            {
-              ans: 'Dunia dan seluruh isinya merupakan tujuan akhir',
-              correct: false,
-              isSelected: false
-            },
-            {
-              ans: 'Tergiur oleh gemerlapnya dunia',
-              correct: false,
-              isSelected: false
-            },
-            {
-              ans: 'Cinta dunia harta secara berlebihan',
-              correct: false,
-              isSelected: false
-            }
-          ]
-        }
-      ],
-      count: 0,
-      isFinish: false
+      Quiz: Quizdata.games[0].quizzes,
+      Num: 0,
+      MyAnswer: '',
+      TrueAnswer: [],
+      Answer: []
     };
   }
 
-  selectAnswer(index) {
-    const data = this.state.questionAnswer;
-    console.log(this.state.questionAnswer[this.state.count].answers[index]);
-
-    data[this.state.count].answers.map((m, v) => {
-      if (v === index) {
-        m.isSelected = true;
-      } else {
-        m.isSelected = false;
-      }
+  componentDidMount() {
+    let jawaban = [];
+    for (let index = 0; index < this.state.Quiz.length; index++) {
+      jawaban.push(this.state.Quiz[index].quiz_true);
+    }
+    this.setState({
+      TrueAnswer: jawaban
     });
-    this.setState({ questionAnswer: data });
   }
 
-  renderQuestion() {
-    if (this.state.isFinish === false) {
-      return (
-        <View>
-          <View style={styles.gridCol}>
-            <Text style={styles.gridText}>Q{this.state.count + 1} : </Text>
-
-            <Text style={styles.gridTextvalue}>{this.state.questionAnswer[this.state.count].question}</Text>
-          </View>
-
-          <View style={styles.gridColAnswer}>
-            {this.state.questionAnswer[this.state.count].answers.map((m, v) => (
-              <View key={v}>
-                <View style={{ flexDirection: 'row', paddingTop: 20 }}>
-                  <CheckBox
-                    checked={m.isSelected}
-                    color={COLOR_BASE_PRIMARY_MAIN}
-                    onPress={this.selectAnswer.bind(this, v)}
-                  />
-                  <Text style={{ paddingLeft: 20 }}>{m.ans}</Text>
-                </View>
-              </View>
-            ))}
-          </View>
-        </View>
-      );
-    }
-
-    return (
-      <View style={styles.container}>
-        <Text style={styles.text}>Finish</Text>
-
-        <Button onPress={this._onPressBack.bind(this)} rounded style={styles.buttonStyleExit}>
-          <Text>Close Quiz</Text>
-        </Button>
-      </View>
-    );
-  }
-
-  _onPressBack() {
-    const { goBack } = this.props.navigation;
-    goBack();
-  }
-
-  exitApp() {
-    BackHandler.exitApp();
-  }
-
-  next() {
-    if (this.state.count !== 4) {
-      this.setState({ count: this.state.count + 1, isFinish: false });
+  next = async () => {
+    if (this.state.Num + 1 === this.state.Quiz.length) {
+      await this.setState({ Answer: [...this.state.Answer, this.state.MyAnswer] });
+      const AllAnswer = this.state.Answer;
+      const AllTrueAnswer = this.state.TrueAnswer;
+      const pushAction = StackActions.push({
+        routeName: 'ScoreQuiz',
+        params: { AllAnswer, AllTrueAnswer }
+      });
+      this.props.navigation.dispatch(pushAction);
     } else {
-      this.setState({ isFinish: true });
+      this.setState({ Num: this.state.Num + 1, Answer: [...this.state.Answer, this.state.MyAnswer] });
     }
-  }
+  };
 
-  renderButton() {
-    return <Button onPress={this.next.bind(this)} title="Next" style={styles.buttonStyle} />;
-  }
+  selected = answer => {
+    this.setState({ MyAnswer: answer });
+  };
+
   render() {
     return (
       <Container>
-        <Header style={{ backgroundColor: COLOR_BASE_PRIMARY_MAIN }}>
-          <Left>
-            <TouchableOpacity style={styles.ButtonRight} onPress={this._onPressBack.bind(this)}>
-              <SvgBack />
-            </TouchableOpacity>
-          </Left>
+        <Header style={styles.header}>
           <Body>
-            <Title>Quiz</Title>
+            <Title style={styles.title}>Test</Title>
           </Body>
-          <Right />
+          <Right>
+            <CountDown
+              until={60 * 45}
+              size={15}
+              onFinish={() => alert('Finished')}
+              digitStyle={{ backgroundColor: '#FFF' }}
+              digitTxtStyle={{ color: '#1CC625' }}
+              timeToShow={['M', 'S']}
+            />
+          </Right>
         </Header>
-
         <Content>
-          {this.renderQuestion()}
-
-          {this.state.isFinish === false ? this.renderButton() : null}
+          <ScrollView style={styles.container}>
+            <Text style={styles.number}>Question {this.state.Num + 1} / 10</Text>
+            <Text style={styles.question}>{this.state.Quiz[this.state.Num].description}</Text>
+            <TouchableOpacity
+              onPress={() => this.selected(this.state.Quiz[this.state.Num].options[0].description)}
+            >
+              <View
+                style={
+                  this.state.MyAnswer === this.state.Quiz[this.state.Num].options[0].description
+                    ? styles.optionSelect
+                    : styles.option
+                }
+              >
+                <Text
+                  style={
+                    this.state.MyAnswer === this.state.Quiz[this.state.Num].options[0].description
+                      ? styles.optionTxtSelect
+                      : styles.optionTxt
+                  }
+                >
+                  A. {this.state.Quiz[this.state.Num].options[0].description}
+                </Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => this.selected(this.state.Quiz[this.state.Num].options[1].description)}
+            >
+              <View
+                style={
+                  this.state.MyAnswer === this.state.Quiz[this.state.Num].options[1].description
+                    ? styles.optionSelect
+                    : styles.option
+                }
+              >
+                <Text
+                  style={
+                    this.state.MyAnswer === this.state.Quiz[this.state.Num].options[1].description
+                      ? styles.optionTxtSelect
+                      : styles.optionTxt
+                  }
+                >
+                  B. {this.state.Quiz[this.state.Num].options[1].description}
+                </Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => this.selected(this.state.Quiz[this.state.Num].options[2].description)}
+            >
+              <View
+                style={
+                  this.state.MyAnswer === this.state.Quiz[this.state.Num].options[2].description
+                    ? styles.optionSelect
+                    : styles.option
+                }
+              >
+                <Text
+                  style={
+                    this.state.MyAnswer === this.state.Quiz[this.state.Num].options[2].description
+                      ? styles.optionTxtSelect
+                      : styles.optionTxt
+                  }
+                >
+                  C. {this.state.Quiz[this.state.Num].options[2].description}
+                </Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => this.selected(this.state.Quiz[this.state.Num].options[3].description)}
+            >
+              <View
+                style={
+                  this.state.MyAnswer === this.state.Quiz[this.state.Num].options[3].description
+                    ? styles.optionSelect
+                    : styles.option
+                }
+              >
+                <Text
+                  style={
+                    this.state.MyAnswer === this.state.Quiz[this.state.Num].options[3].description
+                      ? styles.optionTxtSelect
+                      : styles.optionTxt
+                  }
+                >
+                  D. {this.state.Quiz[this.state.Num].options[3].description}
+                </Text>
+              </View>
+            </TouchableOpacity>
+            <Button block style={styles.button} onPress={this.next}>
+              {this.state.Num + 1 === this.state.Quiz.length ? <Text>Selesai</Text> : <Text>Next</Text>}
+            </Button>
+          </ScrollView>
         </Content>
       </Container>
     );

@@ -6,7 +6,8 @@ const images = {
   peng: require('../../assets/images/pengertian.png'),
   macam: require('../../assets/images/macam.png'),
   lat1: require('../../assets/images/lat1.png'),
-  lat2: require('../../assets/images/lat2.png')
+  lat2: require('../../assets/images/lat2.png'),
+  piala: require('../../assets/images/piala.png')
   // back: require('../../assets/images/back.png'),
   // checkBoxOn: require('../../assets/images/checkbox_on.png'),
   // checkBoxOff: require('../../assets/images/checkbox_off.png'),

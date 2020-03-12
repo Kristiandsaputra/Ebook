@@ -61,9 +61,6 @@ Component.propTypes = {
   leftComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.any]),
   centerComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.any]),
   rightComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.any]),
-  burger: PropTypes.bool,
-  back: PropTypes.bool,
-  setting: PropTypes.bool
 };
 
 Component.defaultProps = {
@@ -73,8 +70,5 @@ Component.defaultProps = {
   rightContainerStyle: {},
   leftComponent: <View />,
   centerComponent: <View />,
-  rightComponent: <View />,
-  burger: false,
-  back: true,
-  setting: false
+  rightComponent: <View />
 };

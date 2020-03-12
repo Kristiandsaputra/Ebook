@@ -13,7 +13,10 @@ import Materi from '../screens/Materi';
 import Materi2 from '../screens/Materi2';
 import ListQuiz from '../screens/ListQuiz';
 import Quiz from '../screens/Quiz';
-import StaticQuiz from '../screens/StaticQuiz';
+import Setting from '../screens/Setting';
+import Tentang from '../screens/Tentang';
+import ScoreQuiz from '../screens/ScoreQuiz';
+import { StatusBar } from 'react-native';
 
 export const HomeStack = StackNavigator(
   {
@@ -32,7 +35,7 @@ export const HomeStack = StackNavigator(
       navigationOptions: {
         tabBarVisible: null
       }
-    }
+    },
   },
   { headerMode: 'none', navigationOptions: { tabBarVisible: null } }
 );
@@ -153,23 +156,14 @@ export const QuizStack = StackNavigator(
     Quiz: {
       screen: Quiz,
       navigationOptions: {
-        tabBarVisible: false
+        tabBarVisible: false,
+        StatusBarVisible: false
       }
     }
   },
-  { headerMode: 'none', navigationOptions: { tabBarVisible: false } }
+  { headerMode: 'none', navigationOptions: { tabBarVisible: false, StatusBarVisible: false } }
 );
-export const StaticQuizStack = StackNavigator(
-  {
-    StaticQuiz: {
-      screen: StaticQuiz,
-      navigationOptions: {
-        tabBarVisible: false
-      }
-    }
-  },
-  { headerMode: 'none', navigationOptions: { tabBarVisible: false } }
-);
+
 export const AccountStack = StackNavigator(
   {
     Account: {
@@ -196,6 +190,39 @@ export const OnBoardingStack = StackNavigator(
   {
     OnBoarding: {
       screen: OnBoarding,
+      navigationOptions: {
+        tabBarVisible: false
+      }
+    }
+  },
+  { headerMode: 'none', navigationOptions: { tabBarVisible: false } }
+);
+export const SettingStack = StackNavigator(
+  {
+    Setting: {
+      screen: Setting,
+      navigationOptions: {
+        tabBarVisible: false
+      }
+    }
+  },
+  { headerMode: 'none', navigationOptions: { tabBarVisible: false } }
+);
+export const TentangStack = StackNavigator(
+  {
+    Tentang: {
+      screen: Tentang,
+      navigationOptions: {
+        tabBarVisible: false
+      }
+    }
+  },
+  { headerMode: 'none', navigationOptions: { tabBarVisible: false } }
+);
+export const ScoreQuizStack = StackNavigator(
+  {
+    ScoreQuiz: {
+      screen: ScoreQuiz,
       navigationOptions: {
         tabBarVisible: false
       }
